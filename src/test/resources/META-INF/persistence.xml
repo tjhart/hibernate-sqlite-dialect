@@ -1,0 +1,21 @@
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="com.hartware.hibernate.dialect">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.hartware.test.model.TestEntity</class>
+        <properties>
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:sqlite:/Users/tjhart/projects/hibernate-sqldialect/src/test/resources/test.db"/>
+            <property name="javax.persistence.jdbc.user" value=""/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
+
+            <property name="hibernate.dialect" value="com.hartware.hibernate.dialect.SQLiteDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
+</persistence>
